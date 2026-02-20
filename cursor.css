@@ -1,0 +1,64 @@
+/* Custom Cursor Styles */
+.custom-cursor {
+    width: 10px;
+    height: 10px;
+    background-color: #0088ff;
+    /* Vibrant blue center */
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.1s ease-out, background-color 0.3s ease;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px #0088ff, 0 0 30px rgba(0, 136, 255, 0.5);
+}
+
+.custom-cursor-outline {
+    width: 45px;
+    height: 45px;
+    border: 2px solid rgba(0, 136, 255, 0.8);
+    /* Bolder blue ring */
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 136, 255, 0.1);
+}
+
+/* Hide default cursor only if not on mobile */
+@media (hover: hover) and (pointer: fine) {
+
+    body,
+    a,
+    button,
+    input,
+    select,
+    textarea {
+        cursor: none !important;
+    }
+}
+
+/* Hover effects */
+.cursor-hover .custom-cursor {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.cursor-hover .custom-cursor-outline {
+    width: 50px;
+    height: 50px;
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Clicking effect */
+.cursor-clicking .custom-cursor {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.cursor-clicking .custom-cursor-outline {
+    transform: translate(-50%, -50%) scale(1.2);
+}
